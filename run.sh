@@ -1,6 +1,7 @@
 #!/bin/bash
 
 container system start
+container image pull ghcr.io/cpressland/desktop:latest
 container stop desktop || true
 container rm desktop || true
 container run -d --memory 4G --name desktop ghcr.io/cpressland/desktop:latest
