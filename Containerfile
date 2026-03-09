@@ -35,8 +35,6 @@ RUN mkdir -p /home/user/.bin/helium && \
     VERSION=$(curl -s https://api.github.com/repos/imputnet/helium-linux/releases/latest | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/') && \
     curl -sSL "https://github.com/imputnet/helium-linux/releases/download/${VERSION}/helium-${VERSION}-${ARCH}_linux.tar.xz" | tar -xJvf - --strip-components=1 -C /home/user/.bin/helium && \
     echo "[Desktop Entry]\nVersion=1.0\nType=Application\nName=Helium\nComment=Helium Web Browser\nExec=/home/user/.bin/helium/helium\nIcon=web-browser\nCategories=Network;WebBrowser;\nTerminal=false" > /home/user/.local/share/applications/helium.desktop
-
 ENV PATH="/home/user/.bin/helium:${PATH}"
-ENV BROWSER=helium
 
 CMD ["vncserver", ":1", "-fg", "-localhost", "no"]
