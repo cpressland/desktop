@@ -8,6 +8,7 @@ RUN apt update && apt -y install \
     xfce4-goodies \
     curl \
     ca-certificates \
+    firefox-esr \
     xz-utils \
     tigervnc-standalone-server \
     dbus-x11 \
