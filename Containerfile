@@ -1,4 +1,4 @@
-FROM docker.io/debian:13
+FROM docker.io/debian:trixie-20260316
 
 ENV DEBIAN_FRONTEND=noninteractive
 
